@@ -28,8 +28,8 @@ export class mobileLibrary{
     getMobiles():mobile[]{
         return this.mobiles
     }
-    setMobiles(newMobiles){
-        this.mobiles.push(newMobiles)
+    setMobiles(newMobiles:mobile[]){
+        this.mobiles = newMobiles
     }
     getTotalPrice():number{
         return this.totalPrice
@@ -41,6 +41,19 @@ export class mobileLibrary{
         let totalPrice:number = 0;
         this.mobiles.forEach(movil => totalPrice = totalPrice + movil.getPrice())
         return totalPrice
+    }
+    printLIbrary(){
+        console.log("This is all my mobiles")
+        this.mobiles.forEach(mobil => console.log(
+            "The caracteristics of the mobile " + mobil.getName() + " are:" + "\n" + 
+            "     Name: " + mobil.getName() + "\n"+
+            "     Model: " + mobil.getModel() + "\n"+
+            "     Trademark: " + mobil.getTrademark() + "\n"+
+            "     SD size (GB): " + mobil.getSdSide() + "\n"+
+            "     Color: " + mobil.getColor() + "\n"+
+            "     is 5G: " + mobil.getIs5G() + "\n"+
+            "     Number of Cameras: " +mobil.getCameraNumber() + "\n"))
+    }
 
 }
-}
+

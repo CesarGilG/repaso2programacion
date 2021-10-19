@@ -24,7 +24,7 @@ var mobileLibrary = /** @class */ (function () {
         return this.mobiles;
     };
     mobileLibrary.prototype.setMobiles = function (newMobiles) {
-        this.mobiles.push(newMobiles);
+        this.mobiles = newMobiles;
     };
     mobileLibrary.prototype.getTotalPrice = function () {
         return this.totalPrice;
@@ -36,6 +36,17 @@ var mobileLibrary = /** @class */ (function () {
         var totalPrice = 0;
         this.mobiles.forEach(function (movil) { return totalPrice = totalPrice + movil.getPrice(); });
         return totalPrice;
+    };
+    mobileLibrary.prototype.printLIbrary = function () {
+        console.log("This is all my mobiles");
+        this.mobiles.forEach(function (mobil) { return console.log("The caracteristics of the mobile " + mobil.getName() + " are:" + "\n" +
+            "     Name: " + mobil.getName() + "\n" +
+            "     Model: " + mobil.getModel() + "\n" +
+            "     Trademark: " + mobil.getTrademark() + "\n" +
+            "     SD size (GB): " + mobil.getSdSide() + "\n" +
+            "     Color: " + mobil.getColor() + "\n" +
+            "     is 5G: " + mobil.getIs5G() + "\n" +
+            "     Number of Cameras: " + mobil.getCameraNumber() + "\n"); });
     };
     return mobileLibrary;
 }());
