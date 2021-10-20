@@ -30,7 +30,9 @@ export class punto{
     }
     calcularCuadrante():number{
         let cuadrante:number = 0;
-        if (this.x!=0 && this.y!=0){
+        if (this.x==0 && this.y==0){
+            cuadrante = 0
+        }else{
             if (this.x>=0 && this.y>=0){
                 cuadrante = 1
             }

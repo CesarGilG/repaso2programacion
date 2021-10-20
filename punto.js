@@ -29,7 +29,10 @@ var punto = /** @class */ (function () {
     };
     punto.prototype.calcularCuadrante = function () {
         var cuadrante = 0;
-        if (this.x != 0 && this.y != 0) {
+        if (this.x == 0 && this.y == 0) {
+            cuadrante = 0;
+        }
+        else {
             if (this.x >= 0 && this.y >= 0) {
                 cuadrante = 1;
             }
